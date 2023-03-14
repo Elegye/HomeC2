@@ -25,4 +25,5 @@ while True:
     if planes_near_me:
         pub.send_string("HueTrack", flags=zmq.SNDMORE)
         pub.send_string("Threat!")
-        print("Sent")
+        print("Planes near me")
+

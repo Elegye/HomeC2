@@ -19,5 +19,6 @@ while True:
 
     socket.send_string("FlightTrack", flags=zmq.SNDMORE)
     socket.send_pyobj(flights)
+    print("Flights sent")
 
     time.sleep(10)

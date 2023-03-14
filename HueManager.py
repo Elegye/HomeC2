@@ -15,10 +15,11 @@ while True:
     print("Topic={}".format(topic))
     data = socket.recv_string()
     print("Data=".format(data))
-    print(b.set_light(5, 'bri', 1))
-    print(b.set_light(5, 'hue', 15000))
-    time.sleep(2)
-    print(b.set_light(5, 'bri', 254))
+    b.set_light(5, 'bri', 1)
+    b.set_light(5, 'hue', 15000)
+    time.sleep(0.5)
+    b.set_light(5, 'bri', 254)
+    b.set_light(5, 'hue', 65535)
     time.sleep(1)
 
 
