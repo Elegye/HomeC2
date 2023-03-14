@@ -16,8 +16,8 @@ socket.bind("tcp://127.0.0.1:5555")
 
 while True:
     flights = fr_api.get_flights(bounds=bounds)
-    for flight in flights:
-        socket.send_string("FlightTrack", flags=zmq.SNDMORE)
-        socket.send_pyobj(flight)
+
+    socket.send_string("FlightTrack", flags=zmq.SNDMORE)
+    socket.send_pyobj(flights)
 
     time.sleep(10)

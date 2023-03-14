@@ -12,10 +12,11 @@ socket.setsockopt(zmq.SUBSCRIBE, b'HueTrack')
 
 while True:
     topic = socket.recv_string()
-    print(topic)
+    print("Topic={}".format(topic))
     data = socket.recv_string()
-    print(data)
+    print("Data=".format(data))
     print(b.set_light(5, 'bri', 1))
+    print(b.set_light(5, 'hue', 15000))
     time.sleep(2)
     print(b.set_light(5, 'bri', 254))
     time.sleep(1)
