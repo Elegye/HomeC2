@@ -18,7 +18,7 @@ while True:
     topic = socket.recv_string()
     flight = socket.recv_pyobj()
     tactical_distance = distance.distance((flight.latitude, flight.longitude), my_position)
-    if tactical_distance.kilometers < 2:
+    if tactical_distance.kilometers < 5:
         pub.send_string("HueTrack", flags=zmq.SNDMORE)
         pub.send_string("Threat!")
         print("Sent")
